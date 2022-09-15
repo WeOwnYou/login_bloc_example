@@ -60,8 +60,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           username: state.username.value,
           password: state.password.value,
         );
-        // ignore: avoid_catches_without_on_clauses
-      } catch (_) {
+      } on Exception {
         emit(state.copyWith(status: LoginStatus.submissionFailure));
       }
     }

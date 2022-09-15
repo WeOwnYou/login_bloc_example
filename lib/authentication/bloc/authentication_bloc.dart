@@ -56,8 +56,7 @@ class AuthenticationBloc
     try {
       final user = await _userRepository.getUser();
       return user;
-      // ignore: avoid_catches_without_on_clauses
-    } catch (_) {
+    } on Exception {
       return null;
     }
   }

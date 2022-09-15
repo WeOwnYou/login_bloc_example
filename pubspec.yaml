@@ -31,18 +31,23 @@ environment:
 dependencies:
   authentication_repository:
     path: packages/authentication_repository
-  user_repository:
-    path: packages/user_repository
   cupertino_icons: ^1.0.2
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.1
-  equatable: ^2.0.5
+  json_annotation: ^4.6.0
+  user_repository:
+    path: packages/user_repository
+  weather_repository:
+    path: packages/weather_repository
 
 dev_dependencies:
+  build_runner: ^2.2.1
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+  json_serializable: ^6.3.2
 
 flutter:
   uses-material-design: true
