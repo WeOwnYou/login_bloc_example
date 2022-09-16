@@ -38,7 +38,7 @@ class WeatherCubit extends Cubit<WeatherState> {
           weather: weather.copyWith(temperature: Temperature(value: value)),
         ),
       );
-    } on Exception {
+    } on Exception{
       emit(state.copyWith(status: WeatherStatus.failure));
     }
   }

@@ -10,4 +10,7 @@ void main() {
       userRepository: UserRepository(),
     ),
   );
+  // WidgetsFlutterBinding.ensureInitialized();
+  // Bloc.observer = WeatherBlocObserver();
+  // runApp(WeatherApp(weatherRepository: WeatherRepository()));
 }

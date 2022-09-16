@@ -19,11 +19,23 @@ class AuthenticationRepository {
       const Duration(
         milliseconds: 300,
       ),
-      () => _controller.add(AuthenticationStatus.authenticated),
+      () {
+        if (username == '1' && password == '2') {
+          _controller.add(AuthenticationStatus.authenticated);
+          Future<void>.delayed(
+            const Duration(seconds: 5),
+            () {
+              _controller.add(AuthenticationStatus.unauthenticated);
+            },
+          );
+        } else {
+          throw Exception('Wrong login/password');
+        }
+      },
     );
   }
-  
-  void logOut(){
+
+  void logOut() {
     _controller.add(AuthenticationStatus.unauthenticated);
   }
 

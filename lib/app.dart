@@ -2,9 +2,10 @@ import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_bloc_example/authentication/bloc/authentication_bloc.dart';
-import 'package:login_bloc_example/home/home.dart';
 import 'package:login_bloc_example/splash/splash.dart';
+import 'package:login_bloc_example/weather_app.dart';
 import 'package:user_repository/user_repository.dart';
+import 'package:weather_repository/weather_repository.dart';
 
 import 'login/view/view.dart';
 
@@ -56,9 +57,13 @@ class _MyAppViewState extends State<MyAppView> {
                 break;
               case AuthenticationStatus.authenticated:
                 _navigator.pushAndRemoveUntil(
-                  HomePage.route(),
+                  WeatherApp.route(WeatherRepository()),
                   (route) => false,
                 );
+                // _navigator.pushAndRemoveUntil(
+                //   HomePage.route(),
+                //   (route) => false,
+                // );
                 break;
               case AuthenticationStatus.unauthenticated:
                 _navigator.pushAndRemoveUntil(

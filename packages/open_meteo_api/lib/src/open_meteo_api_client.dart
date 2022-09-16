@@ -14,8 +14,8 @@ class WeatherRequestFailure implements Exception {}
 class WeatherNotFoundFailure implements Exception {}
 
 class OpenMeteoApiClient {
-  final _baseUrlGeocoding = 'https://geocoding-api.open-meteo.com';
-  final _baseUrlWeather = 'https://api.open-meteo.com';
+  final _baseUrlGeocoding = 'https://geocoding-api.open-meteo.com/';
+  final _baseUrlWeather = 'https://api.open-meteo.com/';
 
   Future<Location> locationSearch(String query) async {
     final queryParameters = {'name': query, 'count': '1'};
